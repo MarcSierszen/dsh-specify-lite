@@ -155,6 +155,7 @@ test('initPlan classifies missing, existing, file, and symlink states', t => {
   result = initPlan(root);
   assert.equal(result.canInitialize, false);
   assert.equal(result.paths.specs.type, 'symlink');
+  assert.equal(result.paths.specs.path, join(root, '.speckit'));
 });
 
 test('operations reject missing project roots and symlinked specs directories', t => {
@@ -183,6 +184,10 @@ test('features enumerates valid directories, diagnostics, and next prefixes', t 
   ]);
   assert.equal(result.nextPrefix, '1001');
   assert.deepEqual(result.malformed.map(item => item.name), ['003-file', '004-link', 'bad']);
+  assert.equal(
+    result.malformed.find(item => item.name === '004-link').path,
+    join(root, 'specs', '002-a'),
+  );
 });
 
 test('features rejects an unincrementable safe-integer prefix', t => {
