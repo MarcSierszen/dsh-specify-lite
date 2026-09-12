@@ -1,0 +1,6 @@
+# dsh-specify bundle patch: register the Spec-Kit (spec-driven development)
+# skill suite. Applied after dsh-base, whose @deepseek-ai/dsh-skill row provides
+# the `skills` registry this plugin injects.
+- insert:
+    - id: specify-skills
+      name: '@zhangqingyu/dsh-specify'

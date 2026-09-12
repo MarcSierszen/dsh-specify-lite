@@ -1,0 +1,36 @@
+{
+  "name": "@zhangqingyu/dsh-specify",
+  "description": "Lean DSH-only spec-driven development skills",
+  "version": "0.2.0",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./workflow": "./lib/workflow.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/*.js",
+    "cordis.patch.yml",
+    "skills/*/SKILL.md",
+    "skills/scripts/speckit-helper.mjs"
+  ],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/904915452/dsh-specify.git" },
+  "homepage": "https://github.com/904915452/dsh-specify#readme",
+  "bugs": { "url": "https://github.com/904915452/dsh-specify/issues" },
+  "engines": { "node": ">=20" },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2 <0.2.0",
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2 <0.2.0",
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "dependencies": { "yaml": "^2.7.0" },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check lib/index.js && node --check lib/workflow.js && node --check skills/scripts/speckit-helper.mjs"
+  },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}
