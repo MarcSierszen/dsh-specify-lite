@@ -43,6 +43,15 @@ Append a verification run under `## Verification` with a unique UTC ISO-8601 tim
 }
 ```
 
-For partial work use `{"kind":"partial","tasks":[...]}` with unique selected task IDs expanded and in document order. Checks are non-empty; `result` is `pass` exactly for exit code `0`, and `overallResult` is `pass` only if all checks pass. Do not append evidence if no check ran. Preserve all earlier runs and unrelated content.
+For partial work use `{"kind":"partial","tasks":[...]}` with unique selected task IDs expanded and in document order. Checks are non-empty; `result` is `pass` exactly for exit code `0`, and `overallResult` is `pass` only if all checks pass.
+
+Before recording evidence, inspect the existing `## Verification` section:
+
+- For the first verification run, replace the exact standalone sentence `No verification has been recorded.` with the complete verification-run heading and JSON block. Do not leave the placeholder in the file.
+- When valid verification runs already exist, append the new run after the final existing block and preserve every earlier run.
+- If the section contains the placeholder together with a run, malformed text, or invalid existing evidence, stop and direct the user to repair `tasks.md`; do not append another block.
+- If no check ran, append nothing and leave the placeholder unchanged when it is still the only verification content.
+
+After updating task checkboxes and evidence, run `derive-stage` again. If it reports `invalid`, repair the artifact before reporting implementation results. Preserve unrelated content.
 
 Report changed files; completed, failed, blocked, and remaining tasks; and exact commands, exit codes, and results. Claim completion only when every task is checked and the final verification run is full and passing.
