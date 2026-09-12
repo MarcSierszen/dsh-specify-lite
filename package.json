@@ -30,7 +30,7 @@
   "dependencies": { "yaml": "^2.7.0" },
   "scripts": {
     "test": "node --test",
-    "check": "node --check lib/index.js && node --check lib/workflow.js && node --check skills/scripts/speckit-helper.mjs"
+    "check": "node --check lib/index.js && node --check lib/workflow.js && node --check skills/scripts/speckit-helper.mjs && node --test test/consistency.test.js"
   },
   "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
 }
