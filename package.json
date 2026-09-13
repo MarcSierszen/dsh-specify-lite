@@ -1,5 +1,5 @@
 {
-  "name": "@zhangqingyu/dsh-specify",
+  "name": "@marcsierszen/dsh-specify-lite",
   "description": "Lean DSH-only spec-driven development skills",
   "version": "0.2.0",
   "type": "module",
@@ -17,11 +17,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/904915452/dsh-specify.git"
+    "url": "git+https://github.com/MarcSierszen/dsh-specify-lite.git"
   },
-  "homepage": "https://github.com/904915452/dsh-specify#readme",
+  "homepage": "https://github.com/MarcSierszen/dsh-specify-lite#readme",
   "bugs": {
-    "url": "https://github.com/904915452/dsh-specify/issues"
+    "url": "https://github.com/MarcSierszen/dsh-specify-lite/issues"
   },
   "engines": {
     "node": ">=20"

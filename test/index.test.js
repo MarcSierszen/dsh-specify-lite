@@ -16,7 +16,7 @@ import { apply, discoverSkills } from '../lib/index.js';
 const bundledRoot = fileURLToPath(new URL('../skills', import.meta.url));
 
 function fixtureRoot(t) {
-  const root = mkdtempSync(join(tmpdir(), 'dsh-specify-skills-'));
+  const root = mkdtempSync(join(tmpdir(), 'dsh-specify-lite-skills-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
   return root;
 }

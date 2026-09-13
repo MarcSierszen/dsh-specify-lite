@@ -1,11 +1,11 @@
-# @zhangqingyu/dsh-specify
+# @marcsierszen/dsh-specify-lite
 
-A lean, DSH-only plugin for spec-driven development (SDD). It is inspired by GitHub Spec-Kit, but is an independent, incompatible workflow: it does not install or use Spec-Kit or any external SDD CLI.
+A lean, DSH-only plugin for spec-driven development (SDD). It was initially migrated from the `zhangqingyu/dsh-specify` project; it is now independently maintained as `dsh-specify-lite`. It is inspired by GitHub Spec-Kit, but is an independent, incompatible workflow: it does not install or use Spec-Kit or any external SDD CLI.
 
 ## Install
 
 ```bash
-dsh plugin --profile web add git+https://github.com/904915452/dsh-specify.git
+dsh plugin --profile web add git+https://github.com/MarcSierszen/dsh-specify-lite.git
 ```
 
 The minimum tested DSH release is `0.1.1-rc.2`; Node.js 20 or newer is required. The bundled read-only helper is invoked through DSH's Bash tool.
@@ -43,10 +43,14 @@ Artifact edits are explicit: existing artifacts are read, proposed, and confirme
 
 The plugin never mutates Git state: it does not create, switch, reset, stash, commit, merge, or rebase branches.
 
+## Initial migration and current independence
+
+This project began as an initial migration from `zhangqingyu/dsh-specify`, with credit to that starting point. The current `dsh-specify-lite` codebase is independently maintained and does not promise compatibility with the predecessor.
+
 ## Breaking redesign
 
-Version 0.2.0 replaces the prior migrated workflow with the DSH-only three-artifact model above.
+Version 0.2.0 is the breaking redesign: it uses the DSH-only three-artifact model above.
 
 ## Legacy artifacts from versions before 0.2.0
 
-Migrate manually: move old feature directories into `specs/`, rename `specify.md` to `spec.md`, and move any constitution to `.speckit/constitution.md`. Discard unsupported brownfield or branch metadata. Do not create `status.json` or `checklist.md`.
+Projects using older artifacts must migrate manually: move feature directories into `specs/`, rename `specify.md` to `spec.md`, and move any constitution to `.speckit/constitution.md`. Discard unsupported brownfield or branch metadata; do not create `status.json` or `checklist.md`.

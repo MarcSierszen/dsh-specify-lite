@@ -9,7 +9,7 @@ import { spawnSync } from 'node:child_process';
 const helper = fileURLToPath(new URL('../skills/scripts/speckit-helper.mjs', import.meta.url));
 
 function project() {
-  const root = mkdtempSync(join(tmpdir(), 'dsh-specify-cli-'));
+  const root = mkdtempSync(join(tmpdir(), 'dsh-specify-lite-cli-'));
   mkdirSync(join(root, 'specs'));
   return root;
 }

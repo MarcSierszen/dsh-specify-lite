@@ -23,7 +23,7 @@ import {
 } from '../lib/workflow.js';
 
 function project(t, initialized = true) {
-  const root = mkdtempSync(join(tmpdir(), 'dsh-specify-workflow-'));
+  const root = mkdtempSync(join(tmpdir(), 'dsh-specify-lite-workflow-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
   if (initialized) {
     mkdirSync(join(root, '.speckit'));
@@ -224,7 +224,7 @@ test('feature and task paths reject symlink components', t => {
   const taskLink = join(root, 'tasks-link.md');
   symlinkSync(join(realFeature, 'tasks.md'), taskLink);
   assert.throws(() => selectTasks(root, taskLink), isCode('UNSAFE_PATH'));
-  const outside = mkdtempSync(join(tmpdir(), 'dsh-specify-outside-'));
+  const outside = mkdtempSync(join(tmpdir(), 'dsh-specify-lite-outside-'));
   t.after(() => rmSync(outside, { recursive: true, force: true }));
   const outsideTasks = join(outside, 'tasks.md');
   writeFileSync(outsideTasks, taskDocument());

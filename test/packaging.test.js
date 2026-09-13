@@ -32,7 +32,7 @@ const expectedFiles = [
   'skills/speckit/SKILL.md',
 ];
 
-function scratch(t, prefix = 'dsh-specify-pack-') {
+function scratch(t, prefix = 'dsh-specify-lite-pack-') {
   const path = mkdtempSync(join(tmpdir(), prefix));
   t.after(() => rmSync(path, { recursive: true, force: true }));
   return path;
@@ -71,9 +71,9 @@ test('package metadata and exports match the supported runtime contract', async 
   });
   assert.deepEqual(manifest.dependencies, { yaml: '^2.7.0' });
 
-  const plugin = await import('@zhangqingyu/dsh-specify');
-  const workflow = await import('@zhangqingyu/dsh-specify/workflow');
-  const exportedManifest = await import('@zhangqingyu/dsh-specify/package.json', {
+  const plugin = await import('@marcsierszen/dsh-specify-lite');
+  const workflow = await import('@marcsierszen/dsh-specify-lite/workflow');
+  const exportedManifest = await import('@marcsierszen/dsh-specify-lite/package.json', {
     with: { type: 'json' },
   });
   assert.equal(typeof plugin.apply, 'function');

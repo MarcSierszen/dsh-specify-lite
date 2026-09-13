@@ -1,8 +1,8 @@
-# AI Instructions: Refactor `dsh-specify` into a Lean DSH-Only SDD Plugin
+# AI Instructions: Refactor `dsh-specify-lite` into a Lean DSH-Only SDD Plugin
 
 ## Objective
 
-Refactor this repository into a small, reliable, DSH-exclusive Spec-Driven Development (SDD) plugin.
+Refactor this repository into `dsh-specify-lite`, a small, reliable, DSH-exclusive Spec-Driven Development (SDD) plugin.
 
 The result is an independent project inspired by GitHub Spec-Kit. It is not a compatible implementation, extension, or runtime distribution of GitHub Spec-Kit.
 
@@ -771,7 +771,7 @@ Rewrite `README.md` in concise English for DSH users. It MUST document only:
 - DSH and Node compatibility;
 - the breaking redesign.
 
-Include a brief attribution stating that the workflow is inspired by GitHub Spec-Kit but is independent and incompatible.
+Include a brief attribution stating that the workflow is inspired by GitHub Spec-Kit but is independent and incompatible. Also credit the initial migration from the `zhangqingyu/dsh-specify` predecessor, while stating that the current `dsh-specify-lite` project is independently maintained and does not promise predecessor compatibility.
 
 Review the upstream license before retaining any copied material. Preserve legally required copyright or license notices in `LICENSE` or a dedicated notice file. Prefer newly written concise text over copied upstream prose. This instruction is not legal advice; do not remove a required notice merely to reduce file count.
 
@@ -796,9 +796,9 @@ Do not implement migration detection or `/speckit-migrate`. Do not promise autom
 Update `package.json` to:
 
 - set the breaking redesign version to `0.2.0`;
-- use repository `git+https://github.com/904915452/dsh-specify.git`;
-- use homepage `https://github.com/904915452/dsh-specify#readme`;
-- use bugs URL `https://github.com/904915452/dsh-specify/issues`;
+- use repository `git+https://github.com/MarcSierszen/dsh-specify-lite.git`;
+- use homepage `https://github.com/MarcSierszen/dsh-specify-lite#readme`;
+- use bugs URL `https://github.com/MarcSierszen/dsh-specify-lite/issues`;
 - declare Node `>=20` in `engines`;
 - document in README that the minimum tested DSH release is `0.1.1-rc.2`;
 - declare peer compatibility with `@deepseek-ai/dsh-skill` as `>=0.1.1-rc.2 <0.2.0`;
