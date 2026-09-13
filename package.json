@@ -15,22 +15,37 @@
     "skills/scripts/speckit-helper.mjs"
   ],
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/904915452/dsh-specify.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/904915452/dsh-specify.git"
+  },
   "homepage": "https://github.com/904915452/dsh-specify#readme",
-  "bugs": { "url": "https://github.com/904915452/dsh-specify/issues" },
-  "engines": { "node": ">=20" },
+  "bugs": {
+    "url": "https://github.com/904915452/dsh-specify/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "peerDependencies": {
-    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2 <0.2.0",
-    "@deepseek-ai/cordis": "^4.0.1"
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2 <0.2.0"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2 <0.2.0",
-    "@deepseek-ai/cordis": "^4.0.1"
+    "@biomejs/biome": "^2.5.13",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2 <0.2.0"
   },
-  "dependencies": { "yaml": "^2.7.0" },
+  "dependencies": {
+    "yaml": "^2.7.0"
+  },
   "scripts": {
     "test": "node --test",
-    "check": "node --check lib/index.js && node --check lib/workflow.js && node --check skills/scripts/speckit-helper.mjs && node --test test/consistency.test.js"
+    "check": "node --check lib/index.js && node --check lib/workflow.js && node --check skills/scripts/speckit-helper.mjs && node --test test/consistency.test.js",
+    "format": "npx @biomejs/biome check --write lib/index.js lib/workflow.js skills/scripts/speckit-helper.mjs"
   },
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
 }
