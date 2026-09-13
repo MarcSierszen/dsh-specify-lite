@@ -34,6 +34,8 @@ Initialize only for `/speckit init` or an equally explicit initialization reques
 
 ## Stage and next step
 
-For a stage request, run `features`. With `--feature`, resolve it through `resolve-feature`; without it, select only when exactly one valid feature exists, ask when several exist, and report none when there are none. Never select from Git, environment, recency, or a guess. Run `derive-stage` for the resolved feature.
+For a stage request, run `init-plan` first. If `.speckit/` or `specs/` is missing, report exactly: `Not initialized. Run /speckit init.` If either path is a file, symlink, unreadable, or otherwise conflicting, report the helper diagnostic and stop.
+
+Only after initialization passes, run `features`. With `--feature`, resolve it through `resolve-feature`; without it, select only when exactly one valid feature exists, ask when several exist, and report none when there are none. Never select from Git, environment, recency, or a guess. Run `derive-stage` for the resolved feature.
 
 Report helper diagnostics and one of `invalid`, `not-started`, `specified`, `planned`, `tasked`, `in-progress`, or `complete`; do not use percentages. For `invalid`, recommend repair of the earliest invalid or missing artifact. Otherwise recommend the next valid command. `complete` requires all tasks checked and the final verification run to be full and passing—not artifact existence alone.
