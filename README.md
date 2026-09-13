@@ -1,27 +1,70 @@
-# @marcsierszen/dsh-specify-lite
+<div align="center">
 
-A lean, DSH-only plugin for spec-driven development (SDD). It was initially migrated from the `zhangqingyu/dsh-specify` project; it is now independently maintained as `dsh-specify-lite`. It is inspired by GitHub Spec-Kit, but is an independent, incompatible workflow: it does not install or use Spec-Kit or any external SDD CLI.
+# dsh-specify-lite
 
-## Install
+### From a clear idea to verified implementation — natively in DSH.
+
+[![DSH native](https://img.shields.io/badge/DSH-native-4c6fff?style=for-the-badge)](https://github.com/MarcSierszen/dsh-specify-lite)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](https://github.com/MarcSierszen/dsh-specify-lite/blob/main/LICENSE)
+
+**Specify clearly. Plan deliberately. Implement safely.**
+
+</div>
+
+A lean, DSH-only plugin for spec-driven development (SDD). It was initially migrated from [@zhangqingyu/dsh-specify](https://github.com/zhangqingyu/dsh-specify) and is now independently maintained as `dsh-specify-lite`. It is inspired by GitHub Spec-Kit, but is independent and incompatible: it does not install or use Spec-Kit or any external SDD CLI.
+
+## ✨ Quick start
+
+Install the plugin, then run the workflow from your project root:
 
 ```bash
 dsh plugin --profile web add git+https://github.com/MarcSierszen/dsh-specify-lite.git
 ```
 
-The minimum tested DSH release is `0.1.1-rc.2`; Node.js 20 or newer is required. The bundled read-only helper is invoked through DSH's Bash tool.
+```text
+/speckit init
+/speckit-constitution
+/speckit-specify
+/speckit-plan
+/speckit-tasks
+/speckit-analyze
+/speckit-implement
+```
 
-## Commands
+Initialization creates only `.speckit/` and `specs/`, safely and idempotently. The minimum tested DSH release is `0.1.1-rc.2`; Node.js 20 or newer is required.
 
-- `/speckit` — help, explicit initialization, and derived stage
-- `/speckit-constitution` — optional project constraints
-- `/speckit-specify` — create or revise a feature specification
-- `/speckit-clarify` — resolve specification ambiguity
-- `/speckit-plan` — produce a technical plan
-- `/speckit-tasks` — produce an ordered task list
-- `/speckit-analyze` — model-driven read-only quality review
-- `/speckit-implement` — implement approved tasks
+## 🧭 The workflow
 
-Start with `/speckit init`. Initialization creates only `.speckit/` and `specs/`, safely and idempotently.
+```text
+  principles       contract          design           execution
+      │                │                │                 │
+      ▼                ▼                ▼                 ▼
+ constitution  →  specify  →  plan  →  tasks  →  analyze  →  implement
+```
+
+Each stage produces inspectable artifacts, keeps scope explicit, and ends with evidence you can verify.
+
+## 🧰 Commands
+
+| Command | Purpose |
+| --- | --- |
+| `/speckit` | Help, initialization, and derived project stage |
+| `/speckit-constitution` | Define optional project-wide principles |
+| `/speckit-specify` | Create or revise a feature specification |
+| `/speckit-clarify` | Resolve consequential ambiguity |
+| `/speckit-plan` | Produce a repository-informed technical plan |
+| `/speckit-tasks` | Produce an ordered, traceable task list |
+| `/speckit-analyze` | Perform a read-only quality review |
+| `/speckit-implement` | Implement approved tasks and record verification |
+
+> **Why dsh-specify-lite?** API-first thinking, deterministic artifacts, explicit confirmation before writes, no Git mutation, and excellent single-local-model support — all within DSH.
+
+## ⚡ Single-model by design
+
+> **Disclaimer:** dsh-specify-lite does not use subagents or parallel task execution. It runs the workflow in one agent session, keeping context, edits, and verification predictable.
+
+That focused design works especially well with a single local model: no orchestration overhead, no multi-agent coordination, and a clear end-to-end path from specification to verified implementation.
 
 ## First steps: constitution and a health API
 
