@@ -23,6 +23,60 @@ The minimum tested DSH release is `0.1.1-rc.2`; Node.js 20 or newer is required.
 
 Start with `/speckit init`. Initialization creates only `.speckit/` and `specs/`, safely and idempotently.
 
+## First steps: constitution and a health API
+
+This example establishes project-wide principles first, then defines the API contract and implements its first endpoint.
+
+From the root of a project:
+
+```text
+/speckit init
+/speckit-constitution
+```
+
+When prompted for the project principles, enter:
+
+```text
+Use Python for the service. Design the API contract first. Follow RESTful API conventions.
+```
+
+Then create the first feature specification:
+
+```text
+/speckit-specify
+```
+
+When prompted for the feature, enter:
+
+```text
+Add a health endpoint: GET /health returns HTTP 200 and JSON {"status":"ok"}. The endpoint must not require authentication and should be suitable for automated health checks.
+```
+
+Then continue the delivery path:
+
+```text
+/speckit-plan
+```
+
+Ask for the smallest implementation that preserves the `/health` contract and follows the constitution. Then run:
+
+```text
+/speckit-tasks
+/speckit-implement
+```
+
+The implementation should add the service and tests for `GET /health`, verify the `200` response and exact JSON body, and record the verification evidence in `tasks.md`. The resulting contract is:
+
+```http
+GET /health
+Accept: application/json
+
+200 OK
+Content-Type: application/json
+
+{"status":"ok"}
+```
+
 ## Layout
 
 ```text
