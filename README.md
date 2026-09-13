@@ -12,7 +12,7 @@
 
 </div>
 
-A lean, DSH-only plugin for spec-driven development (SDD). It was initially migrated from [@zhangqingyu/dsh-specify](https://github.com/zhangqingyu/dsh-specify) and is now independently maintained as `dsh-specify-lite`. It is inspired by GitHub Spec-Kit, but is independent and incompatible: it does not install or use Spec-Kit or any external SDD CLI.
+A lean, DSH-only plugin for spec-driven development (SDD). It was initially migrated from [@904915452/dsh-specify](https://github.com/904915452/dsh-specify) and is now independently maintained as `dsh-specify-lite`. It is inspired by GitHub Spec-Kit, but is independent and incompatible: it does not install or use Spec-Kit or any external SDD CLI.
 
 ## ✨ Quick start
 
@@ -142,7 +142,7 @@ The plugin never mutates Git state: it does not create, switch, reset, stash, co
 
 ## Initial migration and current independence
 
-This project began as an initial migration from `zhangqingyu/dsh-specify`, with credit to that starting point. The current `dsh-specify-lite` codebase is independently maintained and does not promise compatibility with the predecessor.
+This project began as an initial migration from `904915452/dsh-specify`, with credit to that starting point. The current `dsh-specify-lite` codebase is independently maintained and does not promise compatibility with the predecessor.
 
 ## Breaking redesign
 
