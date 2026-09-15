@@ -4,6 +4,7 @@
 
 ### From a clear idea to verified implementation — natively in DSH.
 
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/marcsierszen/dsh-specify-lite)
 [![DSH native](https://img.shields.io/badge/DSH-native-4c6fff?style=for-the-badge)](https://github.com/MarcSierszen/dsh-specify-lite)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](https://github.com/MarcSierszen/dsh-specify-lite/blob/main/LICENSE)
@@ -151,3 +152,5 @@ Version 0.2.0 is the breaking redesign: it uses the DSH-only three-artifact mode
 ## Legacy artifacts from versions before 0.2.0
 
 Projects using older artifacts must migrate manually: move feature directories into `specs/`, rename `specify.md` to `spec.md`, and move any constitution to `.speckit/constitution.md`. Discard unsupported brownfield or branch metadata; do not create `status.json` or `checklist.md`.
+
+
