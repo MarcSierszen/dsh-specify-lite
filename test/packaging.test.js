@@ -52,7 +52,7 @@ function npmPack(args, cache) {
 
 test('package metadata and exports match the supported runtime contract', async () => {
   const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
-  assert.equal(manifest.version, '0.2.0');
+  assert.equal(manifest.version, '0.2.1');
   assert.equal(manifest.engines.node, '>=20');
   assert.deepEqual(manifest.exports, {
     '.': './lib/index.js',
@@ -66,7 +66,7 @@ test('package metadata and exports match the supported runtime contract', async 
     'skills/scripts/speckit-helper.mjs',
   ]);
   assert.deepEqual(manifest.peerDependencies, {
-    '@deepseek-ai/dsh-skill': '>=0.1.1-rc.2 <0.2.0',
+    '@deepseek-ai/dsh-skill': '>=0.1.1-rc.2',
     '@deepseek-ai/cordis': '^4.0.1',
   });
   assert.deepEqual(manifest.dependencies, { yaml: '^2.7.0' });
@@ -78,7 +78,7 @@ test('package metadata and exports match the supported runtime contract', async 
   });
   assert.equal(typeof plugin.apply, 'function');
   assert.equal(typeof workflow.deriveStage, 'function');
-  assert.equal(exportedManifest.default.version, '0.2.0');
+  assert.equal(exportedManifest.default.version, '0.2.1');
 });
 
 test('npm dry-run contains exactly the intended runtime files', t => {
